@@ -1,6 +1,6 @@
 ### STOP() Happens use Stop Hook to display a better dialog
 
-STOP() should never be in production code, but sometimes shtop happens.
+STOP() should never be in production code, but sometimes :poop: happens.
  The STOP() statement shows an ugly window that is confusing to users.
  There is no hint the ABORT button halts the program, and its the default!
  
@@ -8,12 +8,12 @@ STOP() should never be in production code, but sometimes shtop happens.
 
 Using `System{PROP:StopHook}` it is easy to replace the RTL Stop Dialog with your own Procedure.
  My dialog below renames the buttons in an attempt to make their purpose obvious.
- The "Continue: button (aka IGNORE) is first, and the default, to imply to the user CLICK ME.
+ The "Continue" button (aka IGNORE) is first, and the default, to imply to the user CLICK ME.
  The "Close Application" button's purpose is more obvious than "ABORT" and placed second.
 
 Most STOP() left in code have terse text, e.g. `STOP('Add Log ' & ERROR())`.
  I add a footer to explain to the user this is not normal, this is an "Unexpected Condition".
- You'll want to customize this to your software. For custom software it might say "Call Carl Now!".
+ You'll want to adapt this to your software product. For custom software mine might say "Call Carl Now!".
 
 ![STOP better](images/readme2.png) 
 
