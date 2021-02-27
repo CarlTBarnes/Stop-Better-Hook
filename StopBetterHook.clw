@@ -57,7 +57,7 @@ AssertBtn   PSTRING(24)
         StopMessage &= BlankMsg   !Called as STOP() or STOP('')
     END
     
-!    COMPILE('** debug **',_Debug_) !w/o Debug *No Assert() or Stack Trace
+    COMPILE('** debug **',_Debug_) !w/o Debug *No Assert() or Stack Trace
     AssertBtn='|Stack Trace'        
             !** debug **            
 
