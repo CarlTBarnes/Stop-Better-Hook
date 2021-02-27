@@ -20,7 +20,8 @@ Most STOP() left in code have terse text, e.g. `STOP('Add Log ' & ERROR())`.
 And the BEST part .... where was this STOP() in my code?
 
 Debug Build's add a "Stack Track" button that calls ASSERT() which shows a Stack Trace making it easy to find the code with this STOP.
- Be sure to use the Debug ClaRUN.dll to get [Procedure Names in the stack Trace.](https://clarionhub.com/t/how-to-improve-the-call-stack-when-your-program-gpfs-to-show-procedure-names/188)
+ Be sure to use the Debug ClaRUN.dll to get
+ [Procedure Names in the stack Trace.](https://clarionhub.com/t/how-to-improve-the-call-stack-when-your-program-gpfs-to-show-procedure-names/188?u=carlbarnes)
  I included my RED files.
 
 ![assert](images/readme3.png) 
