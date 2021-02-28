@@ -66,3 +66,12 @@ AssertBtn   PSTRING(24)
 ```
 
 If you use CapeSoft MessageBox you will need to implement similar code in ds_Stop Procedure. More on that in the future.
+
+---
+
+### Halt Better Hooks HALT()
+
+HaltBetter displays a similar dialog to the above Stop message with footer text to tell
+ the End User this is "Unexpected" and offers a Stack Trace button.
+ 
+![Halt Better](images/readme4.png) 
