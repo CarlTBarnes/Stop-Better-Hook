@@ -57,7 +57,7 @@ AssertBtn   PSTRING(24)
                  'Stop - Unexpected Condition',  | ! Caption
                  ICON:Hand,                      | ! Icon 
                  'Continue|Close Application' & AssertBtn, | 
-                   1)
+                   1, MSGMODE:CANCOPY)
     OF 2 ; HALT()         !Close Application
     OF 3 ; ASSERT(0,'Stop Assert')
     END

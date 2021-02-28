@@ -65,7 +65,7 @@ AssertBtn   PSTRING(24)
                  'Stop - Unexpected Condition',  | ! Caption
                  ICON:Hand,                      | ! Icon 
                  'Continue|Close Application' & AssertBtn, | 
-                   1)
+                   1, MSGMODE:CANCOPY)
     OF 2 ; HALT()         !Close Application
     OF 3 ; ASSERT(0,'Stop Assert')
     END
@@ -90,7 +90,8 @@ StopMessage &STRING
                  'Stop Application ?',       | !Caption
                  ICON:Hand,                  | !Icon HAND Red X
                  BUTTON:ABORT+BUTTON:IGNORE, | !Buttons ABORT and IGNORE
-                              BUTTON:IGNORE)   !<-- Default Ignore
+                              BUTTON:IGNORE, | !<-- Default Ignore
+                 MSGMODE:CANCOPY )             !ALlow Copy Text
     OF BUTTON:ABORT 
        HALT()
     END
