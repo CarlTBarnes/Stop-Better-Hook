@@ -19,13 +19,18 @@ Beta_Proc       PROCEDURE()
   END
 
 Glo:TestHalt    BOOL
-  CODE  
-  Glo:TestHalt=0    !0=STOP Test, 1 to 3 are HALT Tests
-  First_Procedure() 
-
-  SYSTEM{PROP:HaltHook} = ADDRESS(HaltBetter)  
+  CODE
+  !----- STOP Tests ----------
+  IF 1 THEN                !Change to "IF 0" to skip STOP tests
+     Glo:TestHalt=0        !0=STOP Test, 1+ are HALT Tests (do below)
+     First_Procedure()
+  END
+  
+  !----- HALT Tests ----------
+  SYSTEM{PROP:HaltHook} = ADDRESS(HaltBetter)  !Comment to see RTL HALT
   Glo:TestHalt=1        ! 1=HALT(,'text')  2=HALT(,'')  3=HALT()
-  First_Procedure()
+  First_Procedure() 
+  RETURN
 !----------------------------------------------------
 Test_Stop_Hook PROCEDURE()     !Create call stack
 TestNo BYTE
@@ -146,6 +151,7 @@ BlankMsg    STRING('HALT with Blank Reason.')  !for HALT('')
 HaltMessage &STRING
 FooterText  STRING('<13,10>_{60}' & |
             '<13,10>This message is displayed for an unexpected condition.' & |
+            '<13,10>The Application WILL CLOSE and NOT SAVE current data.' & |
             '<13,10>Take a screen capture and note the steps you took.' & |
             '<13,10>Please contact Technical Support for assistance.' )
 AssertBtn   PSTRING(24)
