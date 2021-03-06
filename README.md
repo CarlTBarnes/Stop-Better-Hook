@@ -73,7 +73,8 @@ If you use CapeSoft MessageBox you will need to implement similar code in ds_Sto
 
 HaltBetter shows a similar dialog to the above Stop message with footer text to tell
  the User this is "Unexpected" and they should record some details.
- There is nothing "OK" about the program shutting down and possibly losing User data, so that button is renamed.
- A "Stack Trace" button allows finding the culprit code.
+ There is nothing "OK" about the program shutting down and possibly losing User data, so that button is renamed 
+ "Close Application" and the message makes it clear the end is nigh.
+ A "Stack Trace" button allows finding the culprit code by showing the Assert window.
  
 ![Halt Better](images/readme4.png) 
