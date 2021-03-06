@@ -1,5 +1,7 @@
 ### STOP() Happens use Stop Hook to display a better dialog
 
+For discussion see: https://clarionhub.com/t/stop-happens-improve-it-with-system-stophook/3901
+
 STOP() should never be in production code, but sometimes :poop: happens.
  The STOP() statement shows an ugly window that is confusing to users.
  There is no hint the ABORT button halts the program, and its the default!
