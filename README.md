@@ -73,10 +73,19 @@ If you use CapeSoft MessageBox you will need to implement similar code in ds_Sto
 
 ### Halt Better Hooks HALT()
 
-HaltBetter shows a similar dialog to the above Stop message with footer text to tell
+HaltBetter shows a similar dialog to the above Stop Better message with footer text to tell
  the User this is "Unexpected" and they should record some details.
- There is nothing "OK" about the program shutting down and possibly losing User data, so that button is renamed 
- "Close Application" and the message makes it clear the end is nigh.
+ There is nothing "OK" about the program shutting down and possibly losing User data entry.
+ That button is renamed "Close Application" and the message footer makes it clear this "WILL CLOSE and NOT SAVE". The end is nigh.
  A "Stack Trace" button allows finding the culprit code by showing the Assert window.
  
 ![Halt Better](images/readme4.png) 
+
+Replacement is very simple, you just need to set the HaltHook once as early in application initialization as possible.
+ Add the HaltBetter Procedure from this Repo to the APP that builds your EXE.
+ If you have multiple EXE's you may want to add it to your Data DLL and export it.
+ In the Frame Procedure first code embed, or in the Global Program Code embed, add this one line of code: 
+ 
+```Clarion
+SYSTEM{PROP:HaltHook} = ADDRESS(HaltBetter)
+```
